@@ -15,7 +15,6 @@ namespace Scripts.Doodle
         private void OnTriggerEnter2D(Collider2D collision)
         {
             Dead(collision);
-
             DestroyPlatform(collision);
         }
 
@@ -36,10 +35,19 @@ namespace Scripts.Doodle
             {
                 _deadPanel.enabled = true;
                 rb.velocity = Vector2.zero;
-                _doodleMove.enabled = false;
-                _jet.SetActive(false);
-                _shield.SetActive(false);
+
+                InactiveSupportItem();
+                DiactivateMoveComponent();
             }
+        }
+
+        private void DiactivateMoveComponent() =>
+            _doodleMove.enabled = false;
+
+        private void InactiveSupportItem()
+        {
+            _jet.SetActive(false);
+            _shield.SetActive(false);
         }
     }
 }

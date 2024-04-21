@@ -24,6 +24,12 @@ namespace Scripts.Doodle
         private void Start()
         {
             InputService = ServiceInitialiazatior.InputService;
+           
+            InitializeComponents();
+        }
+
+        private void InitializeComponents()
+        {
             _rigidBody = GetComponent<Rigidbody2D>();
             _spriteBody = GetComponent<SpriteRenderer>();
             _boxCollider = GetComponent<BoxCollider2D>();

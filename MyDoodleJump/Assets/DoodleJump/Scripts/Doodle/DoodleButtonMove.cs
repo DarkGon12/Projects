@@ -8,8 +8,8 @@ namespace Scripts.Doodle
         [SerializeField] private DoodleMove _doodleMove;
         [SerializeField] private Rigidbody2D _rigidBody;
         [SerializeField] private float _horizontalSpeed;
-        [SerializeField] private bool _isLeft;
 
+        [SerializeField] private bool _isLeft;
         private bool _move;
 
         private void Start()
@@ -18,10 +18,8 @@ namespace Scripts.Doodle
                 _doodleMove.InputService = null;
         }
 
-        public void OnPointerDown(PointerEventData eventData)
-        {
+        public void OnPointerDown(PointerEventData eventData) =>
             _move = true;
-        }
 
         private void FixedUpdate()
         {
@@ -37,9 +35,7 @@ namespace Scripts.Doodle
             _doodleMove.Move(_direction);
         }
 
-        public void OnPointerUp(PointerEventData eventData)
-        {
+        public void OnPointerUp(PointerEventData eventData) =>
             _move = false;
-        }
-    } 
+    }
 }
